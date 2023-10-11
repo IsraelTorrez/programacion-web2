@@ -1,0 +1,25 @@
+#signIn{
+padding: 10px 15px;
+border-radius: 20px;
+color: whitesmoke;
+background-color: rgb(21, 21, 21);
+}
+content{
+grid-column: 1/2;
+grid-row: 2/3;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.loginForm{
+display: grid;
+grid-template-columns: 1/2;
+grid-template-rows: 100px 200px 20px;
+border-radius: 20px;
+border: 2px solid rgb(49, 49, 49);
+width: 350px;
+height: 350px;
+background-color: rgba(251, 247, 247, 0.388);
+backdrop-filter: blur(20px);
+box-shadow: 2px 5px 15px black;
+}
