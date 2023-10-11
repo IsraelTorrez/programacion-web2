@@ -21,4 +21,4 @@ const resultado_producto = producto(3, 6)
 console.log(resultado_suma)
 console.log(resultado_resta)
 console.log(resultado_producto)
-console.log(nombreCompleto('Carlos'));
+console.log(nombreCompleto('Israel M'));
