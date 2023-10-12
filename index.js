@@ -26,5 +26,3 @@ console.log(resultado_resta)
 console.log(resultado_producto)
 console.log(resultado_divicion)
 console.log(nombreCompleto('Israel M'));
-
-document.write("Hola a todos")
