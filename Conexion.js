@@ -1,27 +1,33 @@
-const { ClientRequest } = require('http');
-const mysql = require('mysql');
-const connection = mysql.createConnection({
-host: 'localhost',
-user: 'root',
-password: 'password',
-database: 'libros'
+const mysql = require('mysql2');
+
+// Datos de conexión a la base de datos
+const conexion = mysql.createConnection({
+  host: 'DevServ',
+  user: 'israel',
+  password: 'israel',
+  database: 'israel'
 });
-connection.connect((err) => {
-if (err) {
-console.error('Error de conexión:', err);
-return;
-}
-console.log('Conexión a la base de datos MySQL (israel) exitosa');
-//consulta SELECT * FROM Clientes; 
-connection.query('SELECT * FROM clientes', (error, results, fields) => {
-if (error) {
-console.error('Error en la consulta:', error);
-return;
-}
-console.log('Resultados de la consulta:');
-console.log(results);
-results.forEach((row) => {
-console.log(row);
-});
-});
+
+// Realizar la conexión
+conexion.connect((error) => {
+  if (error) {
+    console.error('Error al conectar a la base de datos: ' + error.stack);
+    return;
+  }
+
+  console.log('Conexión a la base de datos MySQL (israel) exitosa');
+
+  // Realizar una consulta de ejemplo
+  conexion.query('SELECT * FROM Clientes', (error, resultados, campos) => {
+    if (error) {
+      console.error('Error al ejecutar la consulta: ' + error.stack);
+      return;
+    }
+
+    console.log('Resultados de la consulta:');
+    console.log(resultados);
+
+    // Cerrar la conexión
+    conexion.end();
+  });
 });
