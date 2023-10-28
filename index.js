@@ -1,28 +1,39 @@
-/*
-Varias funciones en JS
-*/
+let operacionActual = '';
+  let operandoAnterior = '';
+  let operandoActual = '';
 
-function suma(a, b) {
-    return a + b
-}
+  function agregarNumero(numero) {
+    operandoActual += numero;
+    document.getElementById('display').value = operandoActual;
+  }
 
-const resta = function(a, b) {
-    return a - b
-}
+  function realizarOperacion(op) {
+    operacionActual = op;
+    operandoAnterior = operandoActual;
+    operandoActual = '';
+  }
 
-const producto = (a, b) => a * b
- const divicion = function(a,b){
-    return a/b
- }
-const nombreCompleto = (nombre) => `Hola, cómo estas ${nombre}`
+  function calcularResultado() {
+    const num1 = parseFloat(operandoAnterior);
+    const num2 = parseFloat(operandoActual);
+    let resultado;
 
-const resultado_suma = suma(2, 8)
-const resultado_resta = resta(1, 5)
-const resultado_producto = producto(3, 6)
-const resultado_divicion = divicion(4,2)
+    switch (operacionActual) {
+      case '+':
+        resultado = num1 + num2;
+        break;
+      case '-':
+        resultado = num1 - num2;
+        break;
+      case '*':
+        resultado = num1 * num2;
+        break;
+      case '/':
+        resultado = num1 / num2;
+        break;
+      default:
+        resultado = 0;
+    }
 
-console.log(resultado_suma)
-console.log(resultado_resta)
-console.log(resultado_producto)
-console.log(resultado_divicion)
-console.log(nombreCompleto('Israel M'));
+    document.getElementById('display').value = resultado;
+  }
